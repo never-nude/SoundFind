@@ -1,0 +1,42 @@
+# macOS
+.DS_Store
+
+# xcodegen regenerates this from project.yml on every `xcodegen generate`.
+# Treat it as build output and regenerate after checkout.
+SoundFind.xcodeproj/
+
+# xcodebuild outputs (derived data points at /tmp/soundfind-build/ by
+# convention in this repo — see CLAUDE.md — but keep the local ones ignored too)
+build/
+DerivedData/
+*.xcarchive
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Xcode user state (should never be committed)
+*.xcuserstate
+xcuserdata/
+*.pbxuser
+*.perspective*
+*.mode1v3
+*.mode2v3
+*.xccheckout
+*.moved-aside
+
+# Swift Package Manager (not used today but future-proof)
+.swiftpm/
+.build/
+Packages/
+Package.resolved
+
+# fastlane / tools (not used today)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Editor detritus
+*.swp
+.vscode/
+.idea/

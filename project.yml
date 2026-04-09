@@ -1,0 +1,31 @@
+name: SoundFind
+options:
+  bundleIdPrefix: com.kushman
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    TARGETED_DEVICE_FAMILY: "1"   # iPhone only
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: "QHUS8AZVD4"
+    # Sign only when building for a real device; simulator builds skip signing.
+    "CODE_SIGNING_ALLOWED[sdk=iphonesimulator*]": "NO"
+    "CODE_SIGNING_ALLOWED[sdk=iphoneos*]": "YES"
+    "CODE_SIGNING_REQUIRED[sdk=iphoneos*]": "YES"
+
+targets:
+  SoundFind:
+    type: application
+    platform: iOS
+    sources:
+      - path: SoundFind
+        excludes:
+          - "Resources/Info.plist"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.kushman.SoundFind
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: SoundFind/Resources/Info.plist
